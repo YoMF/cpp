@@ -4,6 +4,10 @@
 #include <string>
 #include "benchmark.h"
 
+/* Results
+ 6-7ms per run()
+*/
+
 inline uint32_t ARGB(uint32_t red, uint32_t green, uint32_t blue, uint32_t alpha)
 {
     return (alpha << 24) | (red << 16) | (green << 8) | blue;
