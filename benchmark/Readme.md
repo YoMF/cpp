@@ -2,6 +2,8 @@
 
 ## Usage:
 ```cpp
+
+// Create any function
 const int n = 1000000;
 int arr[n];
 
@@ -12,17 +14,18 @@ void f(int n, int * arr)
 
 int main()
 {
+    // Accepts arbitrary no of parameters!!!
+    
     std::cout << benchmark(1e3, 100, f, n, arr) << '\n';
     // runs the function 100 times and returns the total time in 1/1e3 seconds.
     // Do Not Change the order of arguments.
-    // Pass a void function.
 }
 ```
 
 ## Main Function
 ```cpp
-template <class... T>
-extern intmax_t benchmark(const intmax_t divide_seconds, intmax_t no_of_iterations, void (*fptr)(T...), T... params)
+template <class R, class... T>
+extern intmax_t benchmark(const intmax_t divide_seconds, intmax_t no_of_iterations, R (*fptr)(T...), T... params)
 {
     if((divide_seconds > 1e9) || (divide_seconds <= 0)) throw std::runtime_error("Invalid Value for divide_seconds");
 
