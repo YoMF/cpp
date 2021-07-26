@@ -7,3 +7,6 @@ In our code both the surface and texture gives the same performance(6-7ms) since
 
 ## Hints
 Texture is beneficial when it is used with Render API provided. Especially when it is staic.
+
+## Credits
+[Pixel Pusher](https://github.com/DOOMReboot/PixelPusher)
