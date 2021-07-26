@@ -1,4 +1,4 @@
-
+## Fast Pixel Manipulation using SDL2
 we modify the entire pixels in the screen using surface and texture API in SDL.
 <br/>
 
