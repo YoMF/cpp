@@ -4,6 +4,10 @@
 #include <string>
 #include "benchmark.h"
 
+/*------------ Results -----------------
+    Gives 12-13ms
+*/
+
 namespace SDL
 {
     SDL_DisplayMode dm;
@@ -11,37 +15,18 @@ namespace SDL
     SDL_Window *win = nullptr;
     SDL_Surface *wsurface = nullptr;
 
-    // SDL_Renderer *renderer = nullptr;
-    // SDL_Texture *texture = nullptr;
-
-
     void init()
     {
         SDL_Init(SDL_INIT_VIDEO);
         SDL_GetCurrentDisplayMode(0, &dm);
         win = SDL_CreateWindow("Default", 0, 0, dm.w, dm.h, SDL_WINDOW_SHOWN | SDL_WINDOW_FULLSCREEN_DESKTOP);
-
-        // renderer = SDL_CreateRenderer(win, -1, ::SDL_RendererFlags::SDL_RENDERER_ACCELERATED);
-        // SDL_SetRenderDrawColor(renderer, 255, 255, 255,255);
-        // SDL_RenderClear(renderer);
-        // SDL_RenderPresent(renderer);
-
         wsurface = SDL_GetWindowSurface(win);
-
-        // texture = SDL_CreateTexture(renderer, SDL_GetWindowPixelFormat(win), SDL_TEXTUREACCESS_STREAMING, dm.w, dm.h);
     }
 
     void exit()
     {
         SDL_DestroyWindow(win);
         win = nullptr;
-
-        // SDL_DestroyRenderer(renderer);
-        // renderer = nullptr;
-
-        // SDL_DestroyTexture(texture);
-        // texture = nullptr;
-
         SDL_Quit();
         IMG_Quit();
     }
@@ -63,7 +48,7 @@ int main(int argc, char **argv)
 
     SDL::init();
 
-    benchmark(100, SDL::run);
+    benchmark(100, SDL::run); // run it 100 times.
 
     while (1)
     {
