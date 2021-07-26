@@ -1,1 +1,1 @@
-## This repo has recipes and utilities for cpp
+## This repo has recipes, utilities and tutorials relating to cpp programming.
