@@ -14,6 +14,10 @@ We will be using ternary search. Since the derivatives i calculated resulted in 
 The width of the rectangle with the maximum area is a Unimodal function(I couldn't find a solid proof). But there has to be a single(atleast not atmost) rectangle  
 with a maximum area.
 
+Its actually quite fast (about 800us - the draw_circle function). And draws only about 100 rectangles even for large circles like 500-600px.
+
+you can try filling the octant using the line rendering provided by SDL library too.
+
 ## Results:
 
 We have to transform and copy to get the full circle.
